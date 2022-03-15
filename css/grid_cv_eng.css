@@ -1,12 +1,12 @@
 /* ---------------------------------- CONTACT INFORMATION ---------------------------------- */
 @font-face {
   font-family: sansation_font;
-  src: url('/home/paul/Documents/Projects/docx_bin/fonts/sansation/Sansation_Regular.ttf')
+  src: url('../fonts/sansation/Sansation_Regular.ttf')
 }
 
 @font-face {
   font-family: crimson_font;
-  src: url('/home/paul/Documents/Projects/docx_bin/fonts/crimson/opentype/Crimson-Roman.otf')
+  src: url('../fonts/opentype/Crimson-Roman.otf')
 }
 
 body {
