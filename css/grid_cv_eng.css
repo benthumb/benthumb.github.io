@@ -1,12 +1,12 @@
 /* ---------------------------------- CONTACT INFORMATION ---------------------------------- */
 @font-face {
   font-family: sansation_font;
-  src: url('../fonts/sansation/Sansation_Regular.ttf')
+  src: url('/home/paul/Documents/Projects/docx_bin/fonts/sansation/Sansation_Regular.ttf')
 }
 
 @font-face {
   font-family: crimson_font;
-  src: url('../fonts/opentype/Crimson-Roman.otf')
+  src: url('/home/paul/Documents/Projects/docx_bin/fonts/crimson/opentype/Crimson-Roman.otf')
 }
 
 body {
@@ -71,6 +71,7 @@ ul.edu_lst {
 
 .short_experience{
 	display: grid;     
+	justify-content: center;
 	grid-template-columns: 110px 570px;
 	/*grid-auto-rows: minmax(25, auto);*/
 	grid-template-rows: 14px auto 
@@ -78,12 +79,14 @@ ul.edu_lst {
 
 .education{
 	display: grid;     
+	justify-content: center;
 	grid-template-columns: 110px 570px;
 	grid-auto-rows: minmax(25, auto);
 }
 
 .resume_eng_tp {
 	display: grid;     
+	justify-content: center;
 	grid-template-columns: 410px 270px;
 	grid-auto-rows: minmax(25, auto);
                                                                 
@@ -91,6 +94,7 @@ ul.edu_lst {
 
 .resume_eng_motive {
 	display: grid;     
+	justify-content: center;
 	grid-template-columns: 110px 570px;
 	/*grid-auto-rows: minmax(25, auto);*/
 	grid-template-rows: auto 14px 
@@ -99,6 +103,7 @@ ul.edu_lst {
 
 .resume_eng_exp {
 	display: grid;     
+	justify-content: center;
 	grid-template-columns: 110px 400px 170px;
 	grid-auto-rows: minmax(14, auto);
 	/*grid-template-rows: 12px 12px 12px 12px*/
@@ -106,12 +111,14 @@ ul.edu_lst {
 
 .resume_eng_exp_cont {
 	display: grid;     
+	justify-content: center;
 	grid-template-columns: 110px 400px 170px;
 	grid-auto-rows: minmax(14, auto);
 }
 
 .resume_eng_education {
 	display: grid;     
+	justify-content: center;
 	grid-template-columns: 110px 400px 170px;
 	/*grid-auto-rows: minmax(25, auto);*/
 	grid-template-rows: 14px 14px 14px 
@@ -119,6 +126,7 @@ ul.edu_lst {
 
 .resume_eng_skills{
 	display: grid;     
+	justify-content: center;
 	grid-template-columns: 110px 570px;
 	/*grid-auto-rows: minmax(25, auto);*/
 	grid-template-rows: auto 14px 
@@ -126,6 +134,7 @@ ul.edu_lst {
 
 .resume_eng_add_exp{
 	display: grid;     
+	justify-content: center;
 	grid-template-columns: 110px 570px;
 	/*grid-auto-rows: minmax(25, auto);*/
 	grid-template-rows: 14px auto 14px 
@@ -133,7 +142,7 @@ ul.edu_lst {
 
 hr{
 	width: 680px;
-	margin-left: 0
+	margin-left: auto 
 }
 
 .prof_exp_short{
