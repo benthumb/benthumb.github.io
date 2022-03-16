@@ -3,15 +3,14 @@
 
 <svg
    width="500"
-   height="300"
-   viewBox="0 0 132.29166 79.375002"
+   height="90"
+   viewBox="0 0 132.29166 23.812501"
    version="1.1"
    id="svg82499"
    inkscape:version="1.1.2 (76b9e6a115, 2022-02-25)"
    sodipodi:docname="shokumu_color.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -28,7 +27,7 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="1.3968575"
-     inkscape:cx="229.4436"
+     inkscape:cx="219.42109"
      inkscape:cy="103.44649"
      inkscape:window-width="1920"
      inkscape:window-height="956"
@@ -37,42 +36,16 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs82496">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient83771">
-      <stop
-         style="stop-color:#ed4cb3;stop-opacity:1;"
-         offset="0"
-         id="stop83767" />
-      <stop
-         style="stop-color:#ed4cb3;stop-opacity:0;"
-         offset="1"
-         id="stop83769" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient83771"
-       id="linearGradient83773"
-       x1="0.18390097"
-       y1="39.991705"
-       x2="132.42422"
-       y2="39.991705"
-       gradientUnits="userSpaceOnUse" />
-  </defs>
+     id="defs82496" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       style="fill:url(#linearGradient83773);stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 132.16741,39.991678 c 0,0 -131.85223603,-78.41776 -131.85223603,0 0,78.417882 131.85223603,0 131.85223603,0 z"
-       id="path82601" />
     <g
        aria-label="職務経歴書"
        id="text87237"
        style="font-size:14.1111px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       transform="translate(-11.112501,1.4171951)">
+       transform="matrix(1.3972279,0,0,1.3972279,-34.821258,-41.495884)">
       <path
          d="m 35.29127,36.022085 h 1.900653 v -0.168199 q -0.01682,-0.555058 -0.01682,-1.749273 v -3.254657 h 1.084886 v 3.136917 q 0,0.983967 0.01682,1.934293 h 3.078048 v 1.000786 h -3.061228 q 0.05046,2.3632 0.24389,3.683565 0.622336,-1.278315 1.084885,-2.808929 l 0.992376,0.479369 q -0.849406,2.295921 -1.749273,3.876993 0.327988,1.110116 0.925096,1.959523 0.252299,0.378448 0.361628,0.378448 0.227069,0 0.412089,-2.5314 l 0.958737,0.655978 q -0.277529,3.422856 -1.152166,3.422856 -0.437318,0 -1.168986,-0.807357 -0.622336,-0.706437 -1.059655,-1.942701 -1.286724,1.774502 -3.103277,3.128507 l -0.756897,-0.840997 q 2.136131,-1.547434 3.481726,-3.582646 -0.462549,-2.018392 -0.538238,-4.97029 H 30.47236 v 9.242553 h -1.051245 v -3.582646 q -1.665174,0.580288 -3.683566,1.118526 L 25.392741,42.56504 q 0.706436,-0.12615 1.168984,-0.227069 v -9.671462 h -0.824176 v -1.051246 h 5.701957 v 0.975556 h 1.858602 v -1.841782 h 1.101706 v 1.841782 h 2.237051 v 0.983966 h -0.655978 q -0.353217,1.572664 -0.689617,2.4473 z m -0.958736,0 q 0.336399,-1.034426 0.597108,-2.4473 h -2.220231 q 0.285938,0.925097 0.538238,2.4473 z m -2.102491,0 q -0.260709,-1.589483 -0.529828,-2.4473 H 31.077877 V 32.666509 H 30.47236 v 3.355576 z m -2.808928,-3.355576 h -1.858604 v 2.304331 h 1.858604 z m 0,3.305117 h -1.858604 v 2.304331 h 1.858604 z m 0,3.305116 h -1.858604 v 2.842569 q 0.605518,-0.15138 1.858604,-0.504598 z m 6.753202,-1.168985 v 5.491707 h -3.616285 v 0.874638 h -1.000786 v -6.366345 z m -3.616285,0.916686 v 1.337185 h 2.598679 v -1.337185 z m 0,2.211821 v 1.446514 h 2.598679 v -1.446514 z m 7.5101,-6.114045 Q 39.462613,33.314076 38.806637,32.22919 l 0.950326,-0.462548 q 0.857816,1.488565 1.295134,2.758469 z"
          id="path89925"
