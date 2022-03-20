@@ -1,0 +1,46 @@
+/*.body{
+    background-image: url("./pics/ny_skyline.png");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+}*/
+.page {                                                                       
+    background-color: transparent;
+    display: flex;                                                             
+    flex-wrap: wrap;                                                               
+  }
+
+.section1{
+	width: 100%;
+	/*height: 300px;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*margin: 0 0 200px 0;*/
+
+}
+
+.section2{
+	width: 100%;
+	/*height: 300px;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.pbg_link {
+    background-color: #5995DA;
+    height: 120px;
+    width: 300px;
+    text-align: center;
+    margin: 5px;
+    padding: 15px;
+
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
