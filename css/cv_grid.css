@@ -369,7 +369,8 @@
 	grid-column: 2;
 	grid-row: 5;
     	font-family: "ＭＳ 明朝;MS Mincho";
-        font-size: 8px;
+        /*font-size: 8px;*/
+        font-size: 10px;
 }
 
 .edu_grad_date_hd {
