@@ -428,3 +428,186 @@ ol.short_exp_lst li {
     }
     /* Further font size adjustments or layout tweaks if necessary */
 }
+
+/* ... (Keep all your existing CSS before this media query) ... */
+
+/* ================================== MEDIA QUERIES FOR RESPONSIVENESS ================================== */
+
+/* ----------- Medium Screens (Tablets) ----------- */
+@media (max-width: 991px) {
+  /* ... (Keep your existing tablet styles) ... */
+}
+
+
+/* ----------- Small Screens (Mobile Phones) ----------- */
+@media (max-width: 767px) {
+  body {
+    line-height: 1.5;
+  }
+  .resume-wrapper {
+    margin: 0;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  /* Stack header items */
+  .resume_eng_tp {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 5px;
+  }
+  .name {
+    grid-column: 1;
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  .address_1, .address_2, .address_3, .email, .sns_links {
+    grid-column: 1;
+    text-align: left;
+    margin-bottom: 2px;
+  }
+
+
+  /* Stack section titles above content */
+  .resume_eng_motive,
+  .education { /* .short_experience will be handled specifically below */
+    grid-template-columns: 1fr; /* Single column */
+    gap: 10px;
+  }
+
+  .prof_motive_title,
+  .education_title {
+    /* .prof_exp_short_title is removed from this group for more specific handling */
+    grid-column: 1;
+    grid-row: auto; /* This is fine for these simpler cases */
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 5px; /* Can be 0 if gap is preferred, but 5px is from original rule */
+    font-size: 16px;
+  }
+  .prof_motive_title { font-size: 15px; }
+
+
+  .prof_motive,
+  .education ul.edu_lst {
+    grid-column: 1;
+  }
+   .education ul.edu_lst:first-of-type + ul.edu_lst {
+    grid-row: auto;
+  }
+
+  /* --- Specific handling for .short_experience stacking --- */
+  .short_experience {
+    display: grid; /* Ensure display:grid is set */
+    grid-template-columns: 1fr; /* Single column */
+    gap: 10px; /* This will be the primary space between rows */
+  }
+
+  .short_experience .prof_exp_short_title {
+    /* Pulls text-align, padding-right, font-size from the general desktop rule or the group if it was still in it.
+       Let's ensure those properties are explicitly set or inherited correctly.
+       The original group rule had: text-align: left; padding-right: 0; font-size: 16px; */
+    grid-column: 1;   /* Explicitly in column 1 */
+    grid-row: 1;      /* Explicitly in the first row */
+    text-align: left;
+    padding-right: 0;
+    font-size: 16px;  /* Matched to other mobile titles */
+    margin-bottom: 0; /* Rely on 'gap' for spacing below this item */
+    font-family: sansation_font, sans-serif; /* Ensure font is consistent with other titles */
+    font-weight: bold; /* Ensure font is consistent with other titles */
+  }
+
+  .short_experience .prof_exp_short_title_sub {
+    grid-column: 1;
+    grid-row: 2;      /* Explicitly in the second row */
+    font-weight: bold; /* From original CSS */
+    margin-bottom: 0; /* Rely on 'gap' for spacing below this item */
+    /* font-size is 13px from general rules */
+  }
+
+  .short_experience ol.short_exp_lst {
+    grid-column: 1;
+    grid-row: 3;      /* Explicitly in the third row */
+    list-style-position: outside;
+    margin-left: 15px; /* Adjusted from general mobile list style */
+    padding-left: 0;
+     /* font-size is 13px from general rules */
+  }
+  /* --- End of .short_experience specific handling --- */
+
+
+  /* Stack experience sections */
+  .resume_eng_exp, .resume_eng_exp_cont {
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-areas: /* Redefine areas for stacking */
+      "title"
+      "company"
+      "position"
+      "location"
+      "dates"
+      "details"
+      "note";
+    gap: 8px;
+  }
+
+  .resume_eng_exp .prof_exp_title {
+     font-size: 16px;
+  }
+  .resume_eng_exp_cont .prof_exp_title {
+    display: none;
+  }
+
+
+  .prof_exp_title, /* This refers to the one in .resume_eng_exp (Highlights) */
+  .prof_exp_co_name,
+  .prof_exp_position,
+  .prof_exp_co_location,
+  .prof_exp_hr_agency_location,
+  .prof_exp_dates,
+  .prof_exp_paragraph_desc,
+  .prof_exp_paragraph_det,
+  .prof_exp_paragraph_note {
+    grid-area: auto;
+    text-align: left;
+    padding-right: 0;
+  }
+  .prof_exp_title { /* for Highlights section */
+      margin-bottom: 10px; /* Space below the main "Highlights" title */
+  }
+  .prof_exp_co_location, .prof_exp_dates {
+    margin-bottom: 5px;
+  }
+
+  ul.b-point { /* ol.short_exp_lst handled above */
+    margin-left: 15px;
+    padding-left: 0;
+  }
+
+  /* Adjust font sizes for mobile if needed */
+  p, li, .prof_exp_paragraph_det, .prof_exp_paragraph_note, .prof_exp_paragraph_desc, .prof_motive {
+    font-size: 14px;
+  }
+  /* Sub-details and list items */
+  .address_1, .address_2, .address_3, .email, .sns_links,
+  .prof_exp_co_name, .prof_exp_position, .prof_exp_co_location, .prof_exp_dates,
+  .school_name, .major, .location, .date,
+  .prof_exp_short_title_sub /* font-size for this is now part of this group */
+   {
+    font-size: 13px;
+  }
+  /* Ensure ol.short_exp_lst li items also get this font size */
+  ol.short_exp_lst li {
+      font-size: 13px;
+  }
+
+
+} /* End of @media (max-width: 767px) */
+
+/* ----------- Extra Small Screens (if needed, further refinement) ----------- */
+@media (max-width: 480px) {
+    /* ... (Keep your existing extra-small screen styles) ... */
+    /* You might want to specifically check font size of .short_experience .prof_exp_short_title here too */
+    .short_experience .prof_exp_short_title {
+        font-size: 15px; /* Example: slightly smaller if needed */
+    }
+}
