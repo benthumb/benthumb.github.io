@@ -1,0 +1,245 @@
+/* General Body and Container Styles */
+body {
+    font-family: "Noto Sans CJK JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* ページ全体の背景色を薄いグレーに */
+    color: #212529; /* テキストの色をダークグレーに（良好なコントラスト） */
+}
+
+.container0, .container, .container01 {
+    width: 90%; /* レスポンシブ対応のため幅をパーセンテージに */
+    max-width: 900px; /* 大画面でのコンテンツ幅を制限 */
+    margin: 20px auto; /* コンテンツを中央揃え */
+    padding: 20px; /* 内側余白を調整 */
+    background-color: #ffffff; /* コンテンツエリアの背景を白に */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* 深みを出すための控えめな影 */
+    border-radius: 8px; /* 角を少し丸める */
+}
+
+/* Typography */
+h1, h3 {
+    color: #343a40; /* 見出しの色を少し濃いグレーに */
+    font-family: "Noto Sans CJK JP", "ヒラギノ角ゴ Pro W3", Meiryo, sans-serif; /* 見出しに適したモダンなフォント */
+}
+
+.title {
+    font-size: 2em; /* フォントサイズを相対的に */
+    text-align: center;
+    margin-bottom: 15px;
+    color: #0056b3; /* メインタイトルに落ち着いた青を使用 */
+}
+
+.date, .name {
+    font-size: 0.9em;
+    text-align: right;
+    color: #495057; /* やや優先度の低い情報はミディアムグレーに */
+    margin-bottom: 5px;
+}
+
+.name {
+    margin-bottom: 25px;
+}
+
+h3 { /* ■職務要約, ■職務経歴, ■職務内容の詳細 */
+    font-size: 1.4em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #0056b3; /* アクセントカラーの境界線 */
+    padding-bottom: 6px;
+}
+
+.exp_overview_p, .exp_lst_intro li {
+    font-size: 1em; /* 標準的なフォントサイズ */
+    margin-bottom: 12px;
+    color: #343a40; /* 読みやすい色 */
+}
+
+.exp_lst_intro {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+/* Experience Section General Styling */
+.resume_jpn_tp { /* 各職務経歴のブロック */
+    display: grid;
+    grid-template-columns: 1fr; /* モバイルでは1カラム */
+    border: 1px solid #dee2e6; /* 境界線の色を薄く */
+    margin-bottom: 25px;
+    border-radius: 6px; /* 角を少し丸める */
+    overflow: hidden; /* 境界線が正しく回り込むように */
+}
+
+.exp_heading,
+.business_type,
+.employment_type {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dee2e6; /* 各要素間の区切り線 */
+}
+.resume_jpn_btm { /* 期間、職務内容などを囲むグリッド */
+    padding: 0; /* resume_jpn_btm自体にはパディング不要、中の要素に設定 */
+}
+
+
+.exp_heading:last-child,
+.business_type:last-child,
+.employment_type:last-child {
+    border-bottom: none;
+}
+
+
+.exp_heading { /* 例: 2023年3月-2024年9月（一年半）[正社員]株式会社ファーストQAシステムズ */
+    background-color: #e9ecef; /* 薄いグレー、ダークテキストと高コントラスト */
+    color: #212529;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.business_type { /* 例: ［顧客］事務所・所在地：横浜 */
+    background-color: #f8f9fa; /* 非常に薄いグレー */
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.employment_type { /* 例: [正社員 社員として勤務 */
+    background-color: #e2e6ea; /* 区別のための少し濃いグレー */
+    font-size: 0.95em;
+    text-align: left; /* モバイルデフォルト、幅広画面で調整 */
+}
+
+/* Resume Bottom Grid (Duration, Synopsis, Details) */
+.resume_jpn_btm {
+    display: grid;
+    grid-template-columns: 1fr; /* モバイルでは1カラム */
+    /* border-top: 1px solid #dee2e6; 上の要素との区切りは各要素のborder-bottomで対応 */
+}
+
+.emp_duration_hd,   /* ヘッダー: 期間 */
+.emp_details_hd {    /* ヘッダー: 職務内容 */
+    background-color: #e9ecef; /* exp_headingと一貫性のあるスタイル */
+    color: #212529;
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.emp_duration,      /* 内容: 2023年3月-2024年9月（一年半） */
+.emp_synopsis,      /* 内容: シニアビジネスアナリスト... */
+.emp_details {       /* 内容: 主な実績... */
+    padding: 12px 15px;
+    font-size: 0.95em;
+    border-bottom: 1px solid #dee2e6; /* 各詳細セクションの下にも線を追加 */
+}
+.emp_details:last-child {
+    border-bottom: none; /* 最後の詳細セクションの下線は不要 */
+}
+
+
+.emp_duration {
+    background-color: #f8f9fa; /* 非常に薄いグレー */
+}
+
+.emp_synopsis {
+    background-color: #e9f7fd; /* 薄い青、控えめなハイライト */
+    font-weight: bold; /* 概要を少し目立たせる */
+}
+
+.emp_details {
+    background-color: #ffffff; /* 詳細コンテンツは白背景 */
+}
+
+.emp_details ul {
+    padding-left: 20px; /* リストのインデント */
+    margin-top: 5px;   /* リストの上マージンを少し調整 */
+    margin-bottom: 0;
+}
+
+.emp_details li {
+    margin-bottom: 8px; /* リストアイテム間のスペース */
+}
+
+.b-point { /* 実績の箇条書き */
+    font-size: 0.95em;
+    list-style-type: disc;
+    margin-left: 0;
+    margin-bottom: 6px;
+}
+
+.p-graph { /* キーワードや箇条書きの導入部分 */
+    list-style-type: none; /* マーカーなし */
+    font-size: 0.9em;
+    color: #495057; /* キーワードのテキストを少し薄く */
+    margin-top: 10px;
+    padding-left: 0; /* .emp_details ul からの継承をリセット */
+}
+.p-graph p {
+    margin-bottom: 0;
+}
+
+
+/* Responsive Adjustments */
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+    .resume_jpn_tp {
+        grid-template-columns: 2fr 1fr; /* 事業内容(広め) | 雇用形態 */
+    }
+
+    .exp_heading {
+        grid-column: 1 / -1; /* 全幅 */
+    }
+
+    .business_type {
+        grid-column: 1 / 2;
+        border-right: 1px solid #dee2e6; /* 区切り線 */
+        border-bottom: none;
+    }
+
+    .employment_type {
+        grid-column: 2 / 3;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .resume_jpn_btm {
+        grid-template-columns: 180px auto; /* 期間 | 職務内容詳細 */
+        grid-column: 1 / -1; /* 親グリッドの全幅を使用 */
+    }
+
+    .emp_duration_hd { /* ヘッダー: 期間 */
+        grid-row: 1;
+        grid-column: 1 / 2;
+        border-right: 1px solid #dee2e6;
+    }
+
+    .emp_details_hd { /* ヘッダー: 職務内容 */
+        grid-row: 1;
+        grid-column: 2 / 3;
+    }
+
+    .emp_duration { /* 内容: 期間 */
+        grid-row: 2 / span 2; /* 概要と詳細の行にまたがる */
+        grid-column: 1 / 2;
+        border-right: 1px solid #dee2e6;
+        border-bottom: none; /* 横カラムになるので下線不要 */
+    }
+
+    .emp_synopsis { /* 内容: 概要 */
+        grid-row: 2;
+        grid-column: 2 / 3;
+    }
+
+    .emp_details { /* 内容: 詳細 */
+        grid-row: 3;
+        grid-column: 2 / 3;
+        border-bottom: none; /* 最後のコンテンツブロックなので下線不要 */
+    }
+}
+
+/* Accessibility: Focus indicator for keyboard navigation */
+a:focus, button:focus, [tabindex="0"]:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
