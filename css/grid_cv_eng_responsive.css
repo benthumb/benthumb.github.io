@@ -1,0 +1,430 @@
+/* ---------------------------------- CONTACT INFORMATION & GLOBAL STYLES ---------------------------------- */
+@font-face {
+  font-family: sansation_font;
+  src: url('../fonts/sansation/Sansation_Regular.ttf'); /* Ensure path is correct */
+}
+
+@font-face {
+  font-family: crimson_font;
+  src: url('../fonts/opentype/Crimson-Roman.otf'); /* Ensure path is correct */
+}
+
+body {
+  font-family: crimson_font, serif; /* Added serif as a generic fallback */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light background for contrast */
+  color: #333;
+  line-height: 1.6;
+}
+
+.resume-wrapper {
+  max-width: 900px; /* Max width of the resume content */
+  margin: 20px auto; /* Centering the resume */
+  padding: 20px;
+  background-color: #fff; /* White background for the resume paper */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Basic styling for containers if needed, e.g., margins */
+.container0, .container1, .container2, .container3, .container4, .container5 {
+  margin-bottom: 20px;
+}
+.container3 .resume_eng_exp_cont:not(:last-child) {
+    margin-bottom: 20px; /* Add space between experience entries */
+}
+
+
+hr {
+  width: 100%; /* Make hr fluid */
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/* --- Typography & Colors (mostly from original) --- */
+.SMBC { color: green; }
+.Mizuho { color: blue; }
+.MUFG { color: red; }
+.c_name_color_style { color: blue; font-weight: bold; }
+
+/* General Font Sizes - can be adjusted in media queries if needed */
+p, li, .prof_exp_paragraph_det, .prof_exp_paragraph_note, .prof_exp_paragraph_desc, .prof_motive {
+  font-size: 13px; /* Slightly larger base for readability */
+}
+.name { font-size: 30px; } /* Kept original */
+.address_1, .address_2, .address_3, .email, .sns_links,
+.prof_exp_co_name, .prof_exp_position, .prof_exp_co_location, .prof_exp_dates,
+.school_name, .major, .location, .date,
+.prof_exp_short_title_sub, ol.short_exp_lst, ul.edu_lst {
+  font-size: 12px; /* Kept original for these details, can be increased */
+}
+.prof_motive_title, .prof_exp_title, .education_title, .prof_exp_short_title {
+  font-family: sansation_font, sans-serif; /* Added sans-serif fallback */
+  font-size: 14px; /* Slightly larger titles */
+  font-weight: bold;
+}
+
+
+/* ---------------------------------- HEADER SECTION (resume_eng_tp) ---------------------------------- */
+.resume_eng_tp {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Flexible columns */
+  gap: 20px; /* Space between columns */
+  align-items: end;
+}
+
+.name {
+  grid-column: 1 / -1; /* Span full width initially, then adjust */
+  margin-bottom: 10px; /* Space below name when stacked */
+}
+
+.address_1, .address_2, .address_3, .email, .sns_links {
+  text-align: right;
+}
+
+/* ---------------------------------- MOTIVES SECTION (resume_eng_motive) ---------------------------------- */
+.resume_eng_motive {
+  display: grid;
+  grid-template-columns: 120px 1fr; /* Title column and content column */
+  gap: 20px;
+}
+
+.prof_motive_title {
+  grid-column: 1;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.prof_motive {
+  grid-column: 2;
+  text-align: left;
+}
+
+/* ---------------------------------- EXPERIENCE SECTION (resume_eng_exp, resume_eng_exp_cont) ---------------------------------- */
+.resume_eng_exp, .resume_eng_exp_cont {
+  display: grid;
+  grid-template-columns: 120px 1fr auto; /* Title | Main Content | Dates/Location */
+  grid-template-areas:
+    "title company location"
+    "title position dates"
+    "title details details"
+    "title note note";
+  gap: 5px 20px; /* Row gap, Column gap */
+  align-items: start;
+}
+/* Ensure title div in exp_cont does not take up space if empty */
+.resume_eng_exp_cont .prof_exp_title:empty {
+    display: none;
+}
+
+.prof_exp_title {
+  grid-area: title;
+  text-align: right;
+  padding-right: 15px;
+  align-self: start; /* Keep title at the top of its defined area */
+}
+
+.prof_exp_co_name {
+  grid-area: company;
+  font-weight: bold;
+}
+
+.prof_exp_position {
+  grid-area: position;
+  font-weight: bold;
+}
+
+.prof_exp_co_location {
+  grid-area: location;
+  text-align: right;
+}
+.prof_exp_hr_agency_location { /* Assuming this should also be in 'location' area if present */
+  grid-area: location;
+  text-align: right;
+  font-size: 11px; /* slightly smaller if needed */
+}
+
+.prof_exp_dates {
+  grid-area: dates;
+  text-align: right;
+  font-style: italic;
+}
+
+.prof_exp_paragraph_desc {
+  grid-area: details; /* Initially was row 4, now part of details block */
+  /* If this has content, it will appear before _det */
+}
+.prof_exp_paragraph_desc:not(:empty) {
+    margin-bottom: 10px;
+}
+
+
+.prof_exp_paragraph_det {
+  grid-area: details; /* Spans across where main content and dates/location were */
+  /* margin-top: 5px; */ /* Add some space if desc is also present */
+}
+
+.prof_exp_paragraph_note {
+  grid-area: note;
+  /* margin-top: 5px; */
+}
+.prof_exp_paragraph_note:not(:empty) {
+    margin-top: 10px;
+}
+
+ul.b-point {
+  list-style-type: square;
+  margin-left: 20px; /* Standard indent */
+  padding-left: 5px;
+}
+
+ul.sbp-point {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 2px; /* Keep original */
+}
+ul.sbp-point:not(:empty) { /* Add margin if there are sub-points */
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+ul.sbp-point li::before {
+  content: "-";
+  padding-right: 8px;
+  color: #555; /* Softer color for dashes */
+}
+
+/* ---------------------------------- EDUCATION SECTION (education) ---------------------------------- */
+.education {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 5px 20px;
+  align-items: start;
+}
+
+.education_title {
+  grid-column: 1;
+  text-align: right;
+  padding-right: 15px;
+}
+
+ul.edu_lst {
+  grid-column: 2;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.edu_lst:not(:empty) { /* Add padding if list has items */
+    padding-bottom: 12px;
+}
+
+/* Handle the two ul.edu_lst case - the first is empty in HTML */
+.education ul.edu_lst:first-of-type + ul.edu_lst {
+    grid-row: 1; /* Ensure the second list aligns with the title if the first is truly empty */
+}
+.education ul.edu_lst li {
+    margin-bottom: 3px;
+}
+
+
+.school {
+  font-weight: bold;
+}
+
+/* ---------------------------------- SHORT EXPERIENCE SECTION (short_experience) ---------------------------------- */
+.short_experience {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 5px 20px; /* Row gap, column gap */
+}
+
+.prof_exp_short_title {
+  grid-column: 1;
+  grid-row: 1 / span 2; /* Span title over sub-title and list */
+  text-align: right;
+  padding-right: 15px;
+  align-self: start;
+}
+
+.prof_exp_short_title_sub {
+  grid-column: 2;
+  grid-row: 1;
+  font-weight: bold;
+  margin-bottom: 5px; /* Space before the list */
+}
+
+ol.short_exp_lst {
+  grid-column: 2;
+  grid-row: 2;
+  list-style-position: outside;
+  margin-left: 20px; /* Standard indent for ordered list */
+  padding-left: 5px;
+}
+ol.short_exp_lst li {
+  margin-bottom: 8px; /* Space between list items */
+}
+
+
+/* ================================== MEDIA QUERIES FOR RESPONSIVENESS ================================== */
+
+/* ----------- Medium Screens (Tablets) ----------- */
+@media (max-width: 991px) { /* Adjusted breakpoint */
+  .resume-wrapper {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .resume_eng_tp {
+    grid-template-columns: 1.5fr 1fr; /* Adjust ratio slightly */
+  }
+
+  .resume_eng_exp, .resume_eng_exp_cont {
+    /* Keep 3 columns for tablet if space allows, or change to 2 */
+    /* For now, keep as is, stacking will occur at mobile */
+    grid-template-columns: 100px 1fr auto; /* Slightly smaller title column */
+    gap: 5px 15px;
+  }
+
+  .prof_motive_title, .prof_exp_title, .education_title, .prof_exp_short_title {
+    padding-right: 10px;
+    font-size: 13px;
+  }
+  .name { font-size: 26px;}
+
+}
+
+
+/* ----------- Small Screens (Mobile Phones) ----------- */
+@media (max-width: 767px) {
+  body {
+    line-height: 1.5;
+  }
+  .resume-wrapper {
+    margin: 0;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  /* Stack header items */
+  .resume_eng_tp {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 5px;
+  }
+  .name {
+    grid-column: 1; /* Ensure it's in the flow */
+    text-align: left; /* Or center: text-align: center; */
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  .address_1, .address_2, .address_3, .email, .sns_links {
+    grid-column: 1;
+    text-align: left; /* Or center */
+    margin-bottom: 2px;
+  }
+
+
+  /* Stack section titles above content */
+  .resume_eng_motive,
+  .education,
+  .short_experience {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 10px;
+  }
+
+  .prof_motive_title,
+  .education_title,
+  .prof_exp_short_title {
+    grid-column: 1;
+    grid-row: auto; /* Reset row spanning */
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 5px;
+    font-size: 16px; /* Larger titles on mobile for sections */
+  }
+  .prof_motive_title { font-size: 15px; } /* specific adjustment if needed */
+
+
+  .prof_motive,
+  .education ul.edu_lst,
+  .short_experience .prof_exp_short_title_sub,
+  .short_experience ol.short_exp_lst {
+    grid-column: 1;
+  }
+   .education ul.edu_lst:first-of-type + ul.edu_lst {
+    grid-row: auto;
+  }
+
+
+  /* Stack experience sections */
+  .resume_eng_exp, .resume_eng_exp_cont {
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-areas: /* Redefine areas for stacking */
+      "title"
+      "company"
+      "position"
+      "location"
+      "dates"
+      "details"
+      "note";
+    gap: 8px;
+  }
+
+  .resume_eng_exp .prof_exp_title { /* Only for the main "Highlights" title */
+     font-size: 16px; /* Make the main section title more prominent */
+  }
+   /* Titles within resume_eng_exp_cont (which are empty in HTML) won't show */
+  .resume_eng_exp_cont .prof_exp_title {
+    display: none; /* Already handled by :empty but explicit here */
+  }
+
+
+  .prof_exp_title, /* This will apply to the main "Highlights" title */
+  .prof_exp_co_name,
+  .prof_exp_position,
+  .prof_exp_co_location,
+  .prof_exp_hr_agency_location,
+  .prof_exp_dates,
+  .prof_exp_paragraph_desc,
+  .prof_exp_paragraph_det,
+  .prof_exp_paragraph_note {
+    grid-area: auto; /* Let them flow naturally in the single column */
+    text-align: left;
+    padding-right: 0; /* Reset padding */
+  }
+    .prof_exp_title { /* for Highlights section */
+        margin-bottom: 10px;
+    }
+  .prof_exp_co_location, .prof_exp_dates {
+    margin-bottom: 5px; /* Add some space when they stack */
+  }
+
+  ul.b-point, ol.short_exp_lst {
+    margin-left: 15px; /* Reduce indent slightly for mobile */
+    padding-left: 0;
+  }
+
+  /* Adjust font sizes for mobile if needed */
+  p, li, .prof_exp_paragraph_det, .prof_exp_paragraph_note, .prof_exp_paragraph_desc, .prof_motive {
+    font-size: 14px;
+  }
+  .address_1, .address_2, .address_3, .email, .sns_links,
+  .prof_exp_co_name, .prof_exp_position, .prof_exp_co_location, .prof_exp_dates,
+  .school_name, .major, .location, .date,
+  .prof_exp_short_title_sub, ol.short_exp_lst, ul.edu_lst {
+    font-size: 13px;
+  }
+
+}
+
+/* ----------- Extra Small Screens (if needed, further refinement) ----------- */
+@media (max-width: 480px) {
+    .resume-wrapper {
+        padding: 10px 5px; /* Less horizontal padding */
+    }
+    .name {
+        font-size: 22px;
+    }
+    /* Further font size adjustments or layout tweaks if necessary */
+}
