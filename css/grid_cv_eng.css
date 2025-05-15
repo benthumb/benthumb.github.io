@@ -373,3 +373,133 @@ hr {
   text-align: right;
   font-size: 12px;
 }
+
+/* Add these media queries to your existing CSS file */
+
+/* Mobile Styles - Add these at the END of your existing CSS */
+@media screen and (max-width: 768px) {
+  /* Responsive containers */
+  .container0, .container1, .container2, .container3, .container4, .container5 {
+    padding: 0 15px;
+  }
+
+  /* Make the top header stack vertically on mobile */
+  .resume_eng_tp {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+  
+  .name {
+    font-size: 24px;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: auto;
+    margin-bottom: 10px;
+  }
+  
+  .address_1, .address_2, .address_3, .email {
+    text-align: left;
+    grid-column: 1;
+  }
+
+  /* Stack sections vertically */
+  .resume_eng_motive,
+  .resume_eng_exp,
+  .resume_eng_exp_cont,
+  .education,
+  .short_experience {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  /* Move section titles above content */
+  .prof_motive_title,
+  .prof_exp_title,
+  .education_title,
+  .prof_exp_short_title {
+    grid-column: 1;
+    text-align: left;
+    padding-right: 0;
+    padding-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  /* Adjust content positioning */
+  .prof_motive,
+  .prof_exp_co_name,
+  .prof_exp_position,
+  .prof_exp_paragraph_det,
+  .edu_lst,
+  .short_exp_lst {
+    grid-column: 1;
+  }
+
+  /* Make locations and dates appear below position */
+  .prof_exp_co_location,
+  .prof_exp_hr_agency_location,
+  .prof_exp_dates {
+    grid-column: 1;
+    text-align: left;
+    margin-top: 5px;
+  }
+
+  /* Adjust font sizes for mobile */
+  body {
+    font-size: 14px;
+  }
+  
+  .prof_exp_co_name,
+  .prof_exp_position {
+    font-size: 14px;
+  }
+  
+  /* Adjust lists for mobile */
+  .b-point {
+    margin-left: 5px;
+  }
+  
+  .sbp-point {
+    padding-left: 15px;
+  }
+  
+  /* Make the short experience list more readable */
+  ol.short_exp_lst {
+    font-size: 13px;
+    padding-left: 15px;
+  }
+  
+  /* Adjust spacing */
+  .prof_exp_paragraph_det {
+    margin-top: 10px;
+  }
+  
+  hr {
+    margin: 15px 0;
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Slightly adjust the grid for tablets */
+  .resume_eng_tp {
+    grid-template-columns: 1fr 300px;
+  }
+  
+  .resume_eng_motive,
+  .resume_eng_exp,
+  .resume_eng_exp_cont {
+    grid-template-columns: 100px 1fr;
+  }
+}
+
+/* Add this to the beginning of your existing CSS file */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure images and content don't overflow */
+img, embed, object, video {
+  max-width: 100%;
+  height: auto;
+}
