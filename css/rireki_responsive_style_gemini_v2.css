@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap');
+/* Alternative: Yusei Magic */
+/* @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap'); */
+/* Alternative: M PLUS Rounded 1c */
+/* @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap'); */
+
+/* ======== GLOBAL & DEFAULTS (Your existing CSS starts below) ======== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+        /* REPLACE your existing font-family with this: */
+        font-family: "Klee One", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+        /*
+        Alternative for Yusei Magic:
+        font-family: "Yusei Magic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    
+        Alternative for M PLUS Rounded 1c:
+        font-family: "M PLUS Rounded 1c", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    
+        Original Mincho-based example (if you want to revert or keep for print):
+        font-family: "MS Mincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+        */
+        font-size: 11px; /* Or your preferred base size */
+        line-height: 1.6; /* Handwritten fonts often benefit from slightly more line height */
+        color: #222;
+        background-color: #e0e0e0;
+        padding: 8px;
+}
+
+.rirekisho-container {
+    background-color: #fff;
+    border: 1px solid #000;
+    max-width: 860px; /* Approx A4 content width in typical pixel density */
+    margin: 0 auto;
+    padding: 10px 15px;
+}
+table { border-collapse: collapse; width: 100%; margin-bottom: 8px; font-size: 0.95em; }
+th, td { border: 1px solid #444; padding: 3px 5px; text-align: left; vertical-align: top; }
+th { background-color: #f0f0f0; text-align: center; font-weight: normal; }
+ul, ol { list-style-position: inside; padding-left: 5px; margin-top: 3px; }
+li { margin-bottom: 2px; }
+a { color: #0066cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.section-title-vertical {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 1px solid #444;
+    padding: 10px 3px;
+    margin-bottom: -1px; /* Overlap with content area's border */
+}
+.section-title-horizontal {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 1px solid #444;
+    padding: 5px 3px;
+    margin-bottom: 5px;
+}
+.section-block { margin-bottom: 12px; }
+.table-container { border: 1px solid #444; padding: 5px; }
+.table-footer-note { font-size: 0.9em; margin-top: 5px; padding-left: 5px; }
+
+/* ======== HEADER ======== */
+.rirekisho-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #000; }
+.rirekisho-header h1 { font-size: 2em; margin: 0; flex-grow: 1; text-align: center; }
+.submission-date { font-size: 0.9em; white-space: nowrap; }
+
+/* ======== FRONT MATTER / SUMMARY ======== */
+.front-matter .content { padding: 8px; border: 1px solid #ccc; background-color: #fcfcfc; white-space: pre-line; font-size:0.95em; }
+.front-matter h2 { text-align:center; font-size:1.3em; margin-bottom:5px; }
+
+
+/* ======== PERSONAL INFO GRID (Complex Grid for Rirekisho Layout) ======== */
+.personal-info.section-grid-complex {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 1fr 90px; /* Adjust based on content, 5 main columns */
+    /* Rows defined by content, use min-height for cells */
+    border: 1px solid #000;
+    margin-bottom: 12px;
+}
+.personal-info .cell {
+    border: 1px solid #000;
+    padding: 3px 4px;
+    display: flex;
+    align-items: center; /* Default */
+    min-height: 26px; /* Rirekisho cell height */
+    font-size: 0.9em;
+}
+.personal-info .label { background-color: #f0f0f0; font-weight: normal; justify-content: center; text-align: center; }
+.personal-info .value { }
+.personal-info .large-text { font-size: 1.6em; font-weight: bold; align-items: flex-start; padding-top: 5px; }
+.personal-info .photo { justify-content: center; align-items: center; border: 1px dashed #999; }
+.personal-info .photo p { font-size: 0.8em; color: #777; }
+.personal-info .photo img { width: 80px; height: 107px; object-fit: cover; } /* 3x4 ratio */
+.personal-info .empty { background-color: #fff; border: 1px solid #000; } /* Keep borders for empty structural cells */
+.personal-info .colspan-2 { grid-column: span 2; }
+.personal-info .colspan-3 { grid-column: span 3; }
+.personal-info .colspan-4 { grid-column: span 4; }
+.personal-info .rowspan-2 { grid-row: span 2; }
+.personal-info .rowspan-3 { grid-row: span 3; }
+.personal-info .rowspan-5 { grid-row: span 5; }
+
+/* Specific placements for personal_info grid cells */
+.personal-info .r1c1 { grid-area: 1 / 1 / 2 / 2; } .personal-info .r1c2 { grid-area: 1 / 2 / 2 / 3; }
+.personal-info .r1c3 { grid-area: 1 / 3 / 4 / 4; } .personal-info .r1c4 { grid-area: 1 / 4 / 4 / 5; }
+.personal-info .r1c5 { grid-area: 1 / 5 / 6 / 6; } /* Photo */
+.personal-info .r2c1 { grid-area: 2 / 1 / 3 / 2; } .personal-info .r2c2 { grid-area: 2 / 2 / 3 / 3; }
+.personal-info .r3c1 { grid-area: 3 / 1 / 4 / 2; } .personal-info .r3c2 { grid-area: 3 / 2 / 4 / 3; }
+.personal-info .r4c1 { grid-area: 4 / 1 / 5 / 2; } .personal-info .r4c2 { grid-area: 4 / 2 / 5 / 5; } /* colspan-3 */
+.personal-info .r5c1 { grid-area: 5 / 1 / 6 / 2; } .personal-info .r5c2 { grid-area: 5 / 2 / 6 / 5; } /* colspan-3 */
+
+.personal-info .r6c1 { grid-area: 6 / 1 / 8 / 2; } /* rowspan-2 */
+.personal-info .r6c2.zip { grid-area: 6 / 2 / 7 / 3; }
+.personal-info .r6c3.address-main { grid-area: 6 / 3 / 7 / 5; } /* colspan-2 */
+.personal-info .r6c5.website { grid-area: 6 / 5 / 7 / 6; }
+
+.personal-info .r7c2.phone { grid-area: 7 / 2 / 8 / 3; }
+.personal-info .r7c3.phone { grid-area: 7 / 3 / 8 / 5; } /* colspan-2 */
+.personal-info .r7c5.phone { grid-area: 7 / 5 / 8 / 6; }
+
+.personal-info .r8c1 { grid-area: 8 / 1 / 9 / 2;}
+.personal-info .r8c2.email { grid-area: 8 / 2 / 9 / 4; } /* colspan-2 */
+.personal-info .r8c3.alt-contact-addr { grid-area: 8 / 4 / 9 / 6; } /* colspan-2 */
+
+.personal-info .r9c1 { grid-area: 9 / 1 / 10 / 2; }
+.personal-info .r9c2.phone { grid-area: 9 / 2 / 10 / 3; }
+.personal-info .r9c3.contact-prefs { grid-area: 9 / 3 / 10 / 4; align-items: flex-start; font-size:0.85em; padding-top:2px; line-height:1.3;}
+.personal-info .r9c4.work-phone-cell { grid-area: 9 / 4 / 10 / 5; }
+.personal-info .r9c5 { grid-area: 9 / 5 / 10 / 6; }
+
+.personal-info .r10c1 { grid-area: 10 / 1 / 11 / 2; } .personal-info .r10c2 { grid-area: 10 / 2 / 11 / 3; }
+.personal-info .r10c3 { grid-area: 10 / 3 / 11 / 4; } .personal-info .r10c4 { grid-area: 10 / 4 / 11 / 5; }
+.personal-info .r10c5 { grid-area: 10 / 5 / 11 / 6; }
+.personal-info .r11c1 { grid-area: 11 / 1 / 12 / 2; } .personal-info .r11c2 { grid-area: 11 / 2 / 12 / 6; } /* colspan-4 */
+
+
+/* ======== COLUMNS WRAPPER FOR EDUCATION/LANG/ETC ======== */
+.columns-wrapper { display: flex; flex-direction: column; gap: 12px; margin-bottom:12px; }
+.column-left, .column-right { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+
+.data-fields-section .fields-container { border: 1px solid #444; padding: 8px; }
+.field-group { margin-bottom: 5px; font-size:0.95em; }
+.field-group .field-label { font-weight: normal; display: inline-block; background-color:#f5f5f5; padding:2px 4px; border:1px solid #ddd; margin-right:5px;}
+.field-group .block-value { display: block; margin-top: 2px; padding-left: 10px; white-space: pre-line;}
+.language-entry { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px dotted #ccc; }
+.language-entry:last-child { border-bottom: none; }
+.language-entry h3 { font-size: 1em; margin-bottom: 3px; background-color:#f0f0f0; padding: 2px 4px; display:inline-block;}
+.language-entry p, .language-entry div { font-size:0.9em; margin-bottom:2px; }
+
+/* ======== WORK HISTORY ======== */
+.work-history { display: grid; grid-template-rows: auto 1fr auto; /* Title, Entries, Summary */ grid-template-columns: 40px 1fr; /* Vertical Title | Content */ }
+.work-history .section-title-vertical {
+    writing-mode: vertical-rl; text-orientation: mixed;
+    padding: 10px 0px; grid-row: 1 / span 2; grid-column: 1;
+    border-right: none; align-self: stretch; justify-content: center;
+}
+.work-history-entries { border: 1px solid #444; grid-column: 2; grid-row: 1; }
+.job-entry { padding: 8px 10px; border-bottom: 1px solid #ccc; }
+.job-entry:last-child { border-bottom: none; }
+.job-header { margin-bottom: 6px; }
+.job-period { font-weight: bold; display: block; margin-bottom: 2px; font-size:0.9em; }
+.job-company { font-size: 1.05em; font-weight: bold; }
+.job-employment-type { font-size: 0.9em; color: #555; margin-left:5px; }
+
+.job-details-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr; /* Label | Value for mobile */
+    gap: 1px; background-color: #ccc; border: 1px solid #ccc; margin-top:5px;
+}
+.job-details-grid .grid-cell { background-color: #fff; padding: 4px 5px; font-size:0.9em; }
+.job-details-grid .label-cell { background-color: #f5f5f5; font-weight: normal; text-align:center; }
+.job-responsibilities.grid-cell { grid-column: 1 / -1; } /* Full width for responsibilities block */
+.job-responsibilities p { margin-top:4px; margin-bottom:2px;}
+.job-responsibilities ul { margin-top: 2px; }
+.job-responsibilities strong { font-weight:normal; background-color:#f5f5f5; padding:1px 3px; display:inline-block;}
+.work-history-summary { text-align:right; padding: 6px 10px; border:1px solid #444; border-top:none; font-weight:bold; grid-column: 2; grid-row: 2;}
+
+
+/* ======== DESKTOP & PRINT STYLES (min-width: 768px) ======== */
+@media (min-width: 768px) {
+    body { font-size: 10px; /* Typical Rirekisho print size */ }
+    .rirekisho-container { padding: 15px 20px; }
+    th, td { padding: 4px 6px; }
+
+    .columns-wrapper { flex-direction: row; } /* Side-by-side columns */
+    .column-left { flex: 0 0 60%; } /* Fixed or percentage based */
+    .column-right { flex: 0 0 40%; }
+
+    .personal-info.section-grid-complex {
+        font-size:0.95em; /* slightly smaller overall for desktop density */
+    }
+    .personal-info .cell { min-height: 22px; padding: 2px 4px; }
+    .personal-info .large-text { font-size: 1.5em; }
+    .personal-info .photo img { width: 109px; height: 145px; } /* Standard Rirekisho photo size */
+
+
+    .job-details-grid {
+        grid-template-columns: 100px 1fr 80px 1fr; /* Period/Co | Details | Emp# | Loc etc. */
+    }
+    .job-details-grid .grid-cell { font-size: 0.95em; }
+    .job-responsibilities.grid-cell { grid-column: 1 / -1; }
+}
+
+/* ======== PRINT STYLES ======== */
+@media print {
+    body {
+        font-size: 9pt; /* Common print size */
+        color: #000; background-color: #fff;
+        padding: 0; margin:0;
+        -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+    .rirekisho-container {
+        border: none; box-shadow: none;
+        max-width: 100%; width: 100%;
+        padding: 8mm 10mm 5mm 10mm; /* Typical print margins */
+        margin:0;
+    }
+    .section-title-vertical, .section-title-horizontal,
+    .personal-info .label, th, .job-details-grid .label-cell,
+    .language-entry h3, .field-group .field-label {
+        background-color: #f0f0f0 !important; /* Ensure backgrounds print */
+    }
+    .personal-info .photo { border: 1px solid #000 !important; }
+    .front-matter .content { border-color: #aaa !important; background-color: #fff !important;}
+    .job-details-grid { gap: 0; border-color: #000; } /* Solid lines for print */
+    .job-details-grid .grid-cell { border: 1px solid #000; }
+
+    /* Avoid breaking elements across pages where possible */
+    .section-block, .data-table-section, .data-fields-section, .job-entry { page-break-inside: avoid; }
+    .rirekisho-header { border-bottom-color: #000; }
+    .columns-wrapper { display: block; } /* Stack columns for print if narrow */
+    .column-left, .column-right { width:100%; flex-basis:auto; }
+
+}
+/* Add to your rirekisho_style.css */
+
+.previous-jobs-summary {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+}
+
+.previous-jobs-summary .summary-table-title {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.previous-jobs-summary .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.previous-jobs-summary .summary-table th,
+.previous-jobs-summary .summary-table td {
+    border: 1px solid #ccc;
+    padding: 4px 6px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.previous-jobs-summary .summary-table th {
+    background-color: #f5f5f5;
+    font-weight: normal;
+}
+
+.job-entry.latest-job {
+    /* Any specific styling for the latest job if needed,
+       e.g., slightly different border or background to make it stand out.
+       Often, no special styling is needed if it's the only one with full details. */
+    padding-bottom: 10px; /* Add some space before the summary table starts */
+}
+/* ======== PERSONAL INFO REVISED GRID (Replaces old .personal-info.section-grid-complex styles) ======== */
+.personal-info-revised .pi-grid-container {
+    display: grid;
+    /* Define columns: Label-width | Main Content | Smaller Label | Main Content | Photo-width */
+    /* This is a common Rirekisho pattern. Adjust percentages/fr units as needed for your content. */
+    grid-template-columns: 70px 1.5fr 70px 1.5fr 110px;
+    grid-auto-rows: minmax(24px, auto); /* Min height for rows */
+    border: 1px solid #000; /* Overall border for the section */
+    gap: 0; /* No gap, borders will define cells */
+}
+
+/* Default styling for items within the new personal info grid */
+.personal-info-revised .pi-item {
+    border: 1px solid #000; /* Each block becomes a "cell" boundary */
+    padding: 3px 5px;
+    display: flex;
+    flex-direction: column; /* Default stacking within a block */
+    justify-content: center; /* Vertically center content in the block */
+}
+
+/* Specific grid placements for each block */
+.personal-info-revised .pi-photo-cell {
+    grid-column: 5 / 6;
+    grid-row: 1 / span 5; /* Span approx 5 typical rows for photo */
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.personal-info-revised .pi-photo-cell img { /* If you add an img tag via XSLT */
+    width: 100px; /* Adjust as needed */
+    height: auto; /* Adjust as needed, or set fixed */
+    object-fit: cover;
+}
+.personal-info-revised .pi-photo-cell p { font-size: 0.8em; color: #777; text-align:center; }
+
+
+.personal-info-revised .pi-name-block {
+    grid-column: 1 / span 4; /* Span across 4 columns before photo */
+    grid-row: 1 / span 2;    /* Takes up 2 Rirekisho rows conceptually */
+    flex-direction: column;  /* Stack furigana above kanji parts */
+    justify-content: flex-start;
+    padding: 2px 5px;
+}
+.pi-name-block .pi-name-furigana { display: flex; align-items: baseline; font-size: 0.8em; }
+.pi-name-block .pi-name-kanji { display: flex; align-items: baseline; margin-top: 2px; }
+.pi-name-block .pi-sub-label { /* ふりがな */
+    min-width: 40px; /* Adjust */
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 1px 3px;
+    margin-right: 5px;
+    align-self: flex-start; /* Align with furigana text */
+}
+.pi-name-block .pi-main-label { /* 氏名 */
+    min-width: 40px; /* Adjust */
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 1px 3px;
+    margin-right: 5px;
+    align-self: center; /* Align with kanji text */
+}
+.pi-name-block .pi-data.phonetic { font-size: 1em; }
+.pi-name-block .pi-data.main.large-text { font-size: 1.8em; font-weight: bold; }
+
+
+.personal-info-revised .pi-gender-bdate-block {
+    grid-column: 1 / span 4; /* Under name, before photo */
+    grid-row: 3 / 4;
+    flex-direction: row; /* Gender and Birthdate side-by-side */
+    justify-content: space-around; /* Distribute them */
+    align-items: center;
+    padding: 2px 5px;
+}
+.pi-gender-bdate-block .pi-gender,
+.pi-gender-bdate-block .pi-birthdate {
+    display: flex;
+    align-items: center;
+    border: none; /* No internal borders for sub-fields if not desired */
+    padding: 0 5px;
+}
+.pi-gender-bdate-block .pi-label {
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+
+.personal-info-revised .pi-address-block {
+    grid-column: 1 / span 4; /* Under gender/bdate, before photo */
+    grid-row: 4 / span 2; /* Takes 2 rows */
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2px 5px;
+}
+.pi-address-block .pi-address-furigana { display: flex; align-items: baseline; font-size: 0.8em; }
+.pi-address-block .pi-address-main { display: flex; align-items: flex-start; margin-top: 2px; }
+.pi-address-block .pi-sub-label { /* ふりがな */
+    min-width: 40px;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 1px 3px;
+    margin-right: 5px;
+    align-self: flex-start;
+}
+.pi-address-block .pi-main-label { /* 現住所 */
+    min-width: 40px;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 1px 3px;
+    margin-right: 5px;
+    align-self: flex-start; /* Align with top of address */
+}
+.pi-address-block .pi-data.phonetic { font-size: 1em; }
+.pi-address-block .pi-data.main { font-size: 1em; line-height: 1.3; }
+
+
+.personal-info-revised .pi-contact-block {
+    grid-column: 1 / span 3; /* Example: takes 3 columns, below address */
+    grid-row: 6 / 7;
+    flex-direction: column; /* Stack phone group, email, web */
+    padding: 2px 5px;
+}
+.pi-contact-block .pi-contact-phones .pi-label,
+.pi-contact-block .pi-contact-email .pi-label,
+.pi-contact-block .pi-contact-website .pi-label {
+    background-color: #f0f0f0; padding: 2px 4px; margin-right: 5px; display: inline-block; min-width:60px; text-align:center;
+}
+.pi-contact-block .pi-contact-phones .pi-phone-item { margin-bottom: 1px; }
+.pi-contact-block .pi-contact-email,
+.pi-contact-block .pi-contact-website { margin-top: 2px; }
+
+
+.personal-info-revised .pi-alt-contact-prefs-block {
+    grid-column: 4 / span 2; /* Example: next to contact-block */
+    grid-row: 6 / 7;        /* Same row as contact-block */
+    flex-direction: column;
+    padding: 2px 5px;
+}
+.pi-alt-contact-prefs-block .pi-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 2px;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 2px;
+}
+.pi-alt-contact-prefs-block .pi-alt-item,
+.pi-alt-contact-prefs-block .pi-pref-item {
+    font-size: 0.9em; margin-bottom: 1px; padding-left: 5px;
+}
+
+
+.personal-info-revised .pi-commute-living-prefs-block {
+    grid-column: 1 / span 5; /* Full width at the bottom of personal info */
+    grid-row: 7 / 8;
+    flex-direction: row; /* Commute, Living, Prefs side-by-side */
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px;
+}
+.pi-commute-living-prefs-block > div { /* pi-commute, pi-living, pi-work-preference */
+    border: 1px solid #eee; padding: 3px 5px; margin: 0 2px; flex:1;
+}
+.pi-commute-living-prefs-block .pi-label {
+    font-weight: bold; display: block; margin-bottom: 2px; background-color: #f0f0f0; text-align:center; padding:2px;
+}
+.pi-commute-living-prefs-block .pi-detail-item,
+.pi-commute-living-prefs-block .pi-data {
+    font-size: 0.9em; padding-left: 5px;
+}
+
+/* Internal styling for items within the blocks */
+.pi-item .pi-label, .pi-item .pi-sub-label, .pi-item .pi-main-label {
+    font-size: 0.85em; /* Smaller for labels */
+    /* background-color: #f0f0f0; already applied to some specific cases */
+    padding: 2px 4px;
+    text-align: center;
+    white-space: nowrap;
+}
+.pi-item .pi-data {
+    /* Styles for data if needed beyond block context */
+}
+
+/* Adjust for mobile - stack the blocks */
+@media (max-width: 767px) {
+    .personal-info-revised .pi-grid-container {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+    .personal-info-revised .pi-item,
+    .personal-info-revised .pi-photo-cell {
+        grid-column: 1 / -1 !important; /* Override desktop grid placement */
+        grid-row: auto !important;    /* Stack them naturally */
+        margin-bottom: 8px;
+    }
+    .personal-info-revised .pi-photo-cell {
+        order: -1; /* Try to put photo at the top */
+        max-width: 150px; margin-left:auto; margin-right:auto;
+    }
+
+    .pi-gender-bdate-block,
+    .pi-commute-living-prefs-block {
+        flex-direction: column; /* Stack internal items too */
+        align-items: stretch;
+    }
+    .pi-gender-bdate-block .pi-gender,
+    .pi-gender-bdate-block .pi-birthdate {
+        margin-bottom:3px;
+    }
+    .pi-commute-living-prefs-block > div {
+        margin-bottom: 5px;
+    }
+}
