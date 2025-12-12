@@ -1,0 +1,266 @@
+/* --- RESET & BASICS --- */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+a { text-decoration: none; color: #0056b3; }
+a:hover { text-decoration: underline; }
+
+/* --- HEADER & CONTACT --- */
+header {
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Ensures name and contact don't force same height */
+}
+
+/* Fix for "Name and text are same font/size" */
+.header-name-block {
+    flex: 1;
+}
+
+h1.name {
+    font-size: 2.2em; /* Much larger than contact info */
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    color: #111;
+    letter-spacing: 0.05em;
+}
+
+.kanji-name {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.contact-grid {
+    font-size: 0.9em; /* Smaller than main text */
+    line-height: 1.4;
+    text-align: right;
+    color: #444;
+}
+
+.contact-item {
+    display: block;
+}
+
+/* --- SECTION HEADERS --- */
+section { margin-bottom: 32px; }
+
+p, .ln-bp, .ln-sp {
+    line-height: 1.55;
+}
+
+h2.section-title {
+    font-size: 1.25em;
+    font-weight: 600;
+    border-left: 4px solid #0056b3;
+    padding-left: 8px;
+    letter-spacing: 0.03em;
+}
+
+.summary-text { text-align: justify; }
+
+/* --- INDEX TABLE (Top Section) --- */
+.index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.index-table th {
+    background-color: #eee;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 2px solid #ccc;
+}
+
+.index-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.index-table tr {
+    transition: background-color 0.2s ease;
+}
+
+.index-table tr:hover {
+    background-color: #f0f8ff;
+    cursor: pointer;
+}
+
+/* Column Widths */
+.th-date, .idx-date { width: 140px; white-space: nowrap; font-weight: bold; color: #666; }
+.th-co, .idx-co { font-weight: bold; color: #0056b3; }
+
+/* --- EXPERIENCE DETAILS --- */
+.company-block {
+    margin-bottom: 40px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 30px;
+    /* This creates a buffer so the header isn't hidden behind the browser chrome when linked */
+    scroll-margin-top: 20px;
+}
+
+.co-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.co-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #000;
+}
+
+.job-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.job-title { color: #0056b3; font-size: 1.1em; }
+
+.co-meta {
+    font-size: 0.85em;
+    color: #666;
+    background: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: block;
+}
+
+.job-desc { margin-top: 15px; margin-bottom: 15px; }
+
+/* --- BULLET POINT LOGIC (The Fix) --- */ /* By using Flexbox on the row, the bullet (::before) stays at the top even if text wraps */ 
+
+.details-container { font-size: 0.95em; } 
+
+/* Paragraph Type */ 
+.ln-pp { 
+    margin: 15px 0 5px 0; 
+    font-weight: bold; 
+    text-decoration: underline; } 
+
+/* Standard Bullet Point */ 
+.ln-bp { 
+    align-items: flex-start;
+    display: flex; 
+    margin-bottom: 4px; } 
+
+.ln-bp::before { 
+    position: relative;
+    top: 2px;
+    content: "•"; 
+    margin-right: 10px; 
+    color: #0056b3; 
+    font-weight: bold; 
+    flex-shrink: 0; 
+    /* Prevents bullet from getting squashed */ 
+} 
+
+/* Sub-Point (Indented) */ 
+.ln-sp { 
+    display: flex; 
+    margin-left: 20px; 
+    /* Indent the whole block */ 
+    margin-bottom: 4px; 
+    color: #444; } 
+
+.ln-sp::before { 
+    position: relative;
+    top: 2px;
+    content: "◦"; 
+    /* Hollow circle for hierarchy */ 
+    margin-right: 10px; 
+    color: #666; 
+    flex-shrink: 0; }
+
+/* Keyword Block */
+.ln-kw {
+    margin-top: 15px;
+    font-size: 0.85em;
+    color: #666;
+    border-top: 1px dotted #ccc;
+    padding-top: 5px;
+}
+
+.kw-label { font-weight: bold; color: #333; }
+
+/* --- SIMPLE TABLES (Edu/Skills) --- */
+.simple-table {
+    table-layout: auto;
+}
+
+.simple-table td {
+    white-space: normal;
+    word-break: keep-all;
+    padding: 6px 8px;
+}
+
+.col-label {
+    width: 150px;
+    font-weight: bold;
+    background: #fafafa;
+}
+
+:target {
+    animation: highlight 1.5s ease-out;
+}
+
+@keyframes highlight {
+    from { background-color: #fff8cd; }
+    to   { background-color: transparent; }
+}
+
+/* --- PRINT STYLES --- */
+@media print {
+    body { background: white; padding: 0; }
+    .container { box-shadow: none; padding: 0; width: 100%; max-width: 100%; }
+    header { border-bottom: 1px solid #000; }
+    a { text-decoration: none; color: #000; }
+    .company-block { page-break-inside: avoid; }
+    .section-title { page-break-after: avoid; }
+    .details-container, .ln-bp, .ln-sp {
+        page-break-inside: avoid; 
+    }
+    /* Hide the "Index" on print if preferred, or keep it */
+}
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contact-grid {
+        text-align: left;
+        margin-top: 10px;
+    }
+    .job-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

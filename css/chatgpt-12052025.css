@@ -1,0 +1,314 @@
+:root {
+    /* Palette */
+    --primary-color: #1f2e3d;       /* Slightly deeper, more executive */
+    --accent-color: #2f4454;        /* Harmonized accent tone */
+    --text-color: #2a2a2a;
+    --light-text: #666;
+    --border-color: #d0d0d0;
+    --bg-color: #fafafa;
+
+    /* Rhythm + Typography */
+    --heading-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --body-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --line-height: 1.55;
+    --section-spacing: 38px;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: var(--line-height);
+    color: var(--text-color);
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 45px 50px;
+    background: #fff;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+header {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 22px;
+    margin-bottom: var(--section-spacing);
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin: 0 0 12px 0;
+    font-size: 2.3rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.contact-details {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    display: inline-block;
+}
+
+.contact-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.separator {
+    color: #bbb;
+}
+
+.github {
+    font-weight: bold;
+}
+
+.linkedin {
+    color: #1e88e5; 
+    font-weight: bold;
+}
+/* ===========================
+   Sections
+=========================== */
+
+section {
+    margin-bottom: var(--section-spacing);
+}
+
+h2 {
+    color: var(--accent-color);
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+    margin-bottom: 18px;
+}
+
+/* ===========================
+   Summary
+=========================== */
+
+.summary p {
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+/* ===========================
+   Detailed Job Experience
+=========================== */
+
+.job-detailed {
+    margin-bottom: 32px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 6px;
+}
+
+.job-header h3 {
+    margin: 0;
+    font-size: 1.22rem;
+    color: #111;
+    font-weight: 600;
+}
+
+.job-dates {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.98rem;
+    white-space: nowrap;
+}
+
+.job-subheader {
+    margin-bottom: 12px;
+    font-style: italic;
+    color: var(--light-text);
+    font-size: 0.97rem;
+}
+
+.project-summary {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #444;
+    font-size: 1rem;
+}
+
+.job-details {
+    padding-left: 24px;
+    margin-top: 5px;
+}
+
+.job-details li {
+    margin-bottom: 6px;
+    font-size: 0.97rem;
+}
+
+/* Bullet vs Sub-Bullet */
+li.bp {
+    list-style-type: disc;
+}
+
+li.sbp {
+    list-style-type: circle;
+    margin-left: 22px;
+    color: #555;
+}
+
+/* ===========================
+   Enumerated Digest
+=========================== */
+
+.digest-header {
+    margin-top: 50px;
+    page-break-before: always;
+}
+
+.digest-legend {
+    display: grid;
+    grid-template-columns: 140px 180px 1fr 1fr;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--light-text);
+    padding: 0 0 6px 28px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 12px;
+}
+
+.experience-digest {
+    padding-left: 28px;
+}
+
+.digest-item {
+    display: grid;
+    grid-template-columns: 140px 180px 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    font-size: 0.97rem;
+    border-bottom: 1px dotted #e4e4e4;
+}
+
+.digest-item:last-child {
+    border-bottom: none;
+}
+
+.d-date {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.d-company {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.d-project {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.d-role {
+    font-size: 0.9rem;
+}
+
+/* ===========================
+   Education
+=========================== */
+
+.edu-block div {
+    margin-bottom: 6px;
+    font-size: 1.08rem;
+}
+
+/* ===========================
+   Mobile Responsiveness
+=========================== */
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 1.85rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-dates {
+        margin-top: 4px;
+    }
+
+    .digest-legend {
+        display: none;
+    }
+
+    .digest-item {
+        display: block;
+        margin-bottom: 26px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .d-date::before { content: "Date: "; color: #999; font-weight: 400; }
+    .d-company::before { content: "Company: "; color: #999; font-weight: 400; }
+    .d-role::before { content: "Role: "; color: #999; font-weight: 400; }
+
+    /* Add spacing for readability */
+    .d-date, .d-company, .d-project, .d-role {
+        margin-bottom: 6px;
+    }
+}
+
+/* ===========================
+   Print Styles
+=========================== */
+
+@media print {
+    body {
+        background-color: #fff;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px;
+        margin: 0;
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    /* Compress spacing slightly for print efficiency */
+    section {
+        margin-bottom: 30px;
+    }
+
+    .digest-header {
+        margin-top: 25px;
+        page-break-before: auto;
+    }
+
+    /* Avoid cutting jobs in half */
+    .job-detailed, .digest-item {
+        page-break-inside: avoid;
+    }
+}
