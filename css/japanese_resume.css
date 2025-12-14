@@ -81,6 +81,11 @@ h2.section-title {
 .summary-text { text-align: justify; }
 
 /* --- INDEX TABLE (Top Section) --- */
+.table-responsive{
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 .index-table {
     width: 100%;
     border-collapse: collapse;
